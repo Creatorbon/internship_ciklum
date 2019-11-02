@@ -25,7 +25,7 @@ header {
 #form {
   -webkit-appearance: none;
   -moz-appearance: none;
-       appearance: none;
+  appearance: none;
 }
 .content {
   min-height: calc(100vh - 70px);
@@ -115,7 +115,7 @@ header {
     .high,
     .norm,
     .low {
-        background: inherit;
+      background: inherit;
     }
 
     .done {

@@ -32,7 +32,6 @@ const checkForms = () => !!searchForm.value || !!priorityForm.value || !!statusF
 let data = checkLocalStorage();
 
 const addTask = function addTaskToTaskContainer() {
-  console.log('Add Task...');
   const taskHolder = document.getElementById('task-container');
   if (!checkForms()) { init(data); }
 
@@ -54,8 +53,6 @@ const addTask = function addTaskToTaskContainer() {
 };
 
 createButton.addEventListener('click', () => {
-  console.log('createButton');
-
   addButton.style.display = '';
   saveButton.style.display = 'none';
   addButton.addEventListener('click', addTask);
@@ -63,8 +60,6 @@ createButton.addEventListener('click', () => {
 });
 
 const deleteTask = function deleteTaskFromDom() {
-  console.log('Delete Task...');
-
   const listItem = this.closest('.task');
   const taskTitle = listItem.querySelector('.task-title');
   const taskDescription = listItem.querySelector('.task-description');
@@ -75,14 +70,11 @@ const deleteTask = function deleteTaskFromDom() {
 
   form.reset();
   data.splice(index, 1);
-  console.log(data);
   init(data);
 };
 
 
 const editTask = function editTaskContent() {
-  console.log('Edit Task...');
-
   const listItem = this.closest('.task');
   const taskTitle = listItem.querySelector('.task-title');
   const taskDescription = listItem.querySelector('.task-description');
@@ -110,14 +102,12 @@ const editTask = function editTaskContent() {
     data[index].title = getTitle.value;
     data[index].description = getDescription.value;
     data[index].priority = getPriority.value;
-    console.log(checkForms());
     if (!checkForms()) { init(data); }
   };
   saveButton.addEventListener('click', save);
 };
 
 const doneTask = function toggleTaskStatus() {
-  console.log('Done/Undone Task...');
   const taskHolder = document.getElementById('task-container');
   const listItem = this.closest('.task');
   const taskTitle = listItem.querySelector('.task-title');
@@ -144,8 +134,6 @@ const doneTask = function toggleTaskStatus() {
 };
 
 const bindTaskEvents = (taskListItem) => {
-  console.log('bind list item events');
-
   const doneButton = taskListItem.querySelector('.done');
   const editButton = taskListItem.querySelector('.edit');
   const deleteButton = taskListItem.querySelector('.delete');

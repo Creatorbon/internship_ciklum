@@ -37,4 +37,4 @@ const generateData = () => {
 const checkLocalStorage = () => (localStorage.getItem('ToDo') ? JSON.parse(localStorage.getItem('ToDo')) : defaultData);
 
 
-export { generateData, checkLocalStorage, defaultData };
+export { generateData, checkLocalStorage };
